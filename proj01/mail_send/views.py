@@ -4,11 +4,10 @@ import	os
 
 from datetime import datetime
 #
-from mail_send.lib.mail_yahoo import mail_yahoo_proc
-
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.views.decorators.csrf import csrf_exempt
+#
 from mail_send.lib.mail_yahoo import mail_yahoo_proc 
 
 # ------------------------------------------------------------------
