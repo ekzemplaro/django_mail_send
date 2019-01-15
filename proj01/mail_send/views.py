@@ -31,7 +31,9 @@ def mail_main_proc(request):
 	if (request.method == 'POST'):
 		flags = None
 #
+		server = os.environ.get('server')
 		mail_from = os.environ.get('mail_from')
+		password = os.environ.get('password')
 		mail_to = request.POST['mail_to']
 		subject = request.POST['subject']
 		str_message = request.POST['str_message']
@@ -42,10 +44,11 @@ def mail_main_proc(request):
 #
 		sys.stderr.write("*** mail_from: " + mail_from + "\n")
 		sys.stderr.write("mail_to:" + mail_to + "\n")
-		mail_yahoo_proc(mail_from,mail_to,subject,str_message)
+		mail_yahoo_proc(server,mail_from,password,mail_to,subject,str_message)
 #
 	sys.stderr.write("*** mail_main_proc *** end ***\n")
 #
 	str_out = "Success"
+#
 	return HttpResponse(str_out)
 # --------------------------------------------------------------------
