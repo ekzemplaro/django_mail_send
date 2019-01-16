@@ -1,16 +1,16 @@
 // -----------------------------------------------------------------------
 //	mail_send.js
 //
-//					Jan/03/2019
+//					Jan/16/2019
 //
 // -----------------------------------------------------------------------
 jQuery (function ()
 {
-	jQuery("#outarea_aa").html ("*** mail_send.js *** start *** Jan/03/2019 ***")
+	jQuery("#outarea_aa").html ("*** mail_send.js *** start *** Jan/16/2019 ***")
 
 	click_check_proc ()
 
-	jQuery("#outarea_hh").html ("*** mail_send.js *** end *** Jan/03/2019 ***")
+	jQuery("#outarea_hh").html ("*** mail_send.js *** end *** Jan/16/2019 ***")
 })
 
 // -----------------------------------------------------------------------
@@ -19,6 +19,9 @@ function click_check_proc ()
 	jQuery ("button.check").click (function ()
 		{
 		var str_out = "*** clicked ***<br />"
+
+		jQuery("#" + this.id).css ("color","blue")
+
 		jQuery("#outarea_bb").html(str_out)
 
 		const url = "/mail_send/main/"
